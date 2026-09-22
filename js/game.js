@@ -17,6 +17,7 @@ var Game = {
 Game.startLevel = function (levelNumber) {
   Game.levelNumber = levelNumber;
   Level.build(levelNumber);
+  Breakable.reset();
   Player.reset();
   Game.mode = "playing";
   Game.showMessage("");
@@ -39,6 +40,7 @@ Game.update = function () {
   if (Game.mode !== "playing") { return; }
 
   Player.update();
+  Breakable.update();
 
   if (Player.isDead()) {
     Game.mode = "dead";

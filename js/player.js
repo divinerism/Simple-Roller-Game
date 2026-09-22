@@ -13,7 +13,8 @@ var Player = {
   vx: 0,           // speed left and right
   vy: 0,           // speed up and down
   onGround: false, // is the player standing on something right now?
-  angle: 0         // how far the circle has rolled, for drawing the dot
+  angle: 0,        // how far the circle has rolled, for drawing the dot
+  landedFromFall: false // true for one frame after we land moving downward
 };
 
 // Put the player back at the level's S square.
@@ -24,6 +25,7 @@ Player.reset = function () {
   Player.vy = 0;
   Player.onGround = false;
   Player.angle = 0;
+  Player.landedFromFall = false;
 };
 
 // Run one frame of player movement.
@@ -65,7 +67,11 @@ Player.update = function () {
 
   for (var j = 0; j < Math.abs(Player.vy); j++) {
     if (Collide.hitsSolid(Player.x, Player.y + stepY, size, size)) {
-      if (stepY > 0) { Player.onGround = true; }  // we landed on something
+      if (stepY > 0) {
+        Player.onGround = true;
+        // landing while moving down tells breakable blocks we fell onto them
+        Player.landedFromFall = true;
+      }
       Player.vy = 0;
       break;
     }

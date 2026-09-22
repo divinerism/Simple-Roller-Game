@@ -11,6 +11,7 @@
         "flat",
         "spikes",
         "platform",
+        "breakable",
         "stairs",
         "finish"
       ]

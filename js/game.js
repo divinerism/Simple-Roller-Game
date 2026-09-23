@@ -49,8 +49,12 @@ Game.update = function () {
   }
 
   if (Player.hasWon()) {
-    Game.mode = "won";
-    Game.showMessage("You made it. Press R to play again.");
+    if (Game.levelNumber + 1 < Level.levels.length) {
+      Game.startLevel(Game.levelNumber + 1);
+    } else {
+      Game.mode = "won";
+      Game.showMessage("You made it. Press R to play again.");
+    }
     return;
   }
 };

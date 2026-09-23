@@ -26,7 +26,22 @@
         "spikepit",
         "platform",
         "gap",
+        "pitofdoom",
         "flat",
+        "finish"
+      ]
+    },
+    {
+      "name": "Level 3 - Goodluck",
+      "pieces": [
+        "start",
+        "run",
+        "run",
+        "evilrun",
+        "run",
+        "evilrun",
+        "evilrun",
+        "pitofdoom",
         "finish"
       ]
     }

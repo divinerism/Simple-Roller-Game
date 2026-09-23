@@ -49,7 +49,7 @@ Game.update = function () {
   }
 
   if (Player.hasWon()) {
-    if (Game.levelNumber + 1 < Level.levels.length) {
+    if (Game.levelNumber < Level.levels.length - 1) {
       Game.startLevel(Game.levelNumber + 1);
     } else {
       Game.mode = "won";

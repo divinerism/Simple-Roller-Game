@@ -9,6 +9,7 @@
    ===================================================================== */
 
 Draw.setup();
+Game.setupMenu();
 
 Level.loadData(function () {
   Game.startLevel(CONFIG.START_LEVEL);

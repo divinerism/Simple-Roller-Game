@@ -10,14 +10,28 @@
 
   <h1>ROLLER</h1>
 
-  <canvas id="game" width="800" height="400"></canvas>
+  <div id="game-area">
+    <canvas id="game" width="800" height="400"></canvas>
+
+    <div id="pause-menu" hidden>
+      <div class="pause-panel">
+        <h2>PAUSED</h2>
+        <div class="level-buttons">
+          <button type="button" data-level="0">1</button>
+          <button type="button" data-level="1">2</button>
+          <button type="button" data-level="2">3</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <p id="message">Loading...</p>
 
   <p class="controls">
     LEFT / RIGHT arrow to roll &nbsp;&middot;&nbsp;
     SPACE or UP arrow to jump &nbsp;&middot;&nbsp;
-    R to restart
+    R to restart &nbsp;&middot;&nbsp;
+    E for menu
   </p>
 
   <!-- ===================================================================

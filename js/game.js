@@ -11,7 +11,24 @@
 
 var Game = {
   mode: "playing",   // "playing", "dead", or "won"
-  levelNumber: 0
+  levelNumber: 0,
+  paused: false
+};
+
+Game.setupMenu = function () {
+  var menu = document.getElementById("pause-menu");
+  var buttons = menu.querySelectorAll("[data-level]");
+
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function () {
+      Game.startLevel(Number(this.getAttribute("data-level")));
+    });
+  }
+};
+
+Game.togglePause = function () {
+  Game.paused = !Game.paused;
+  document.getElementById("pause-menu").hidden = !Game.paused;
 };
 
 Game.startLevel = function (levelNumber) {
@@ -20,6 +37,8 @@ Game.startLevel = function (levelNumber) {
   Breakable.reset();
   Player.reset();
   Game.mode = "playing";
+  Game.paused = false;
+  document.getElementById("pause-menu").hidden = true;
   Game.showMessage("");
 };
 
@@ -29,6 +48,13 @@ Game.showMessage = function (text) {
 
 // --- ONE FRAME --------------------------------------------------------
 Game.update = function () {
+
+  if (Input.menuPressed) {
+    Game.togglePause();
+    Input.menuPressed = false;
+  }
+
+  if (Game.paused) { return; }
 
   // R always restarts, no matter what mode we are in.
   if (Input.restart) {

@@ -24,6 +24,71 @@ canvas {
   margin: 0 auto;
 }
 
+#game-area {
+  position: relative;
+  width: 806px;
+  margin: 0 auto;
+}
+
+#pause-menu {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pause-menu[hidden] {
+  display: none;
+}
+
+.pause-panel {
+  min-width: 220px;
+  padding: 24px;
+  background: #ffffff;
+  border: 3px solid #000000;
+}
+
+.pause-panel h2 {
+  margin: 0 0 20px;
+  letter-spacing: 4px;
+}
+
+.level-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.level-buttons button {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #000000;
+  background: #ffffff;
+  color: #000000;
+  font: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.level-buttons button:hover,
+.level-buttons button:focus-visible {
+  background: #000000;
+  color: #ffffff;
+}
+
+@media (max-width: 850px) {
+  #game-area {
+    width: min(806px, 100%);
+  }
+
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 #message {
   font-size: 18px;
   height: 24px;

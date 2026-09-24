@@ -32,17 +32,17 @@
       ]
     },
     {
-      "name": "Level 3 - Goodluck",
+      "name": "Level 3 - RUN",
       "pieces": [
-        "start",
+        "evilstart",
         "run",
         "run",
         "evilrun",
         "run",
         "evilrun",
         "evilrun",
-        "pitofdoom",
-        "finish"
+        "precision",
+        "evilfinish"
       ]
     }
   ]

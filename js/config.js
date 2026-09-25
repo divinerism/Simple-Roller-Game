@@ -33,6 +33,6 @@ var CONFIG = {
                       // 0 = dead center, 1 = right on the edge
 
   // --- rules ----------------------------------------------------------
-  BREAK_FRAMES: 60,   // about one second before a landed-on block vanishes
+  BREAK_FRAMES: 30,   // about half a second before a landed-on block vanishes
   START_LEVEL: 0      // which level in data/levels.json to load first
 };

@@ -44,6 +44,55 @@
         "precision",
         "evilfinish"
       ]
+    },
+    {
+      "name": "Level 4 - Small Break",
+      "pieces": [
+        "start",
+        "pitofdoom",
+        "precision",
+        "spikepit",
+        "ramp",
+        "run",
+        "gap",
+        "pitofdoom",
+        "breakable",
+        "finish"
+      ]
+    },
+    {
+      "name": "Level 5 - Ramping up",
+      "pieces": [
+        "start",
+        "ramp",
+        "gap",
+        "run",
+        "spikepit",
+        "evilrun",
+        "gap",
+        "pitofdoom",
+        "flat",
+        "finish"
+      ]
+    },
+    {
+      "name": "Level 6 - The End of Time",
+      "pieces": [
+        "evilstart",
+        "run",
+        "run",
+        "run",
+        "run",
+        "run",
+        "run",
+        "run",
+        "run",
+        "run",
+        "run",
+        "run",
+        "run",
+        "evilfinish"
+      ]
     }
   ]
 }
